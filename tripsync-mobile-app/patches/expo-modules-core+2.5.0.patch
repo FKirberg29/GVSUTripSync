@@ -1,0 +1,72 @@
+diff --git a/node_modules/expo-modules-core/android/src/main/java/expo/modules/core/ExportedModule.java b/node_modules/expo-modules-core/android/src/main/java/expo/modules/core/ExportedModule.java
+new file mode 100644
+index 0000000..ad5319a
+--- /dev/null
++++ b/node_modules/expo-modules-core/android/src/main/java/expo/modules/core/ExportedModule.java
+@@ -0,0 +1,44 @@
++package expo.modules.core;
++
++import android.content.Context;
++import androidx.annotation.Nullable;
++import expo.modules.core.interfaces.InternalModule;
++import expo.modules.core.interfaces.RegistryLifecycleListener;
++import java.util.Collections;
++import java.util.List;
++import java.util.Map;
++
++/**
++ * Compatibility class for legacy Expo modules that extend ExportedModule.
++ * This class implements InternalModule to work with the new Expo Modules API.
++ */
++public abstract class ExportedModule implements InternalModule, RegistryLifecycleListener {
++  protected Context mContext;
++
++  public ExportedModule(Context context) {
++    mContext = context;
++  }
++
++  public abstract String getName();
++
++  @Nullable
++  public Map<String, Object> getConstants() {
++    return null;
++  }
++
++  @Override
++  public List<Class> getExportedInterfaces() {
++    return Collections.emptyList();
++  }
++
++  @Override
++  public void onCreate(ModuleRegistry moduleRegistry) {
++    // Default implementation
++  }
++
++  @Override
++  public void onDestroy() {
++    // Default implementation
++  }
++}
++
+diff --git a/node_modules/expo-modules-core/android/src/main/java/expo/modules/core/interfaces/ExpoMethod.java b/node_modules/expo-modules-core/android/src/main/java/expo/modules/core/interfaces/ExpoMethod.java
+new file mode 100644
+index 0000000..c2ad508
+--- /dev/null
++++ b/node_modules/expo-modules-core/android/src/main/java/expo/modules/core/interfaces/ExpoMethod.java
+@@ -0,0 +1,16 @@
++package expo.modules.core.interfaces;
++
++import java.lang.annotation.ElementType;
++import java.lang.annotation.Retention;
++import java.lang.annotation.RetentionPolicy;
++import java.lang.annotation.Target;
++
++/**
++ * Compatibility annotation for legacy Expo modules.
++ * Methods annotated with this are exported to JavaScript.
++ */
++@Target(ElementType.METHOD)
++@Retention(RetentionPolicy.RUNTIME)
++public @interface ExpoMethod {
++}
++

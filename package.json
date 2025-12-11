@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "test": "npm run test --workspaces",
+    "test:web": "cd tripsync-web && npm test",
+    "test:mobile": "cd tripsync-mobile-app && npm test",
+    "test:functions": "cd functions && npm test",
+    "test:all": "npm run test:web && npm run test:functions"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.5.0",
+    "firebase-functions": "^6.5.0",
+    "nanoid": "^5.1.6"
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "^3.0.0"
+  }
+}

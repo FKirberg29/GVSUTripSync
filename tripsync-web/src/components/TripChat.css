@@ -1,0 +1,211 @@
+.trip-chat-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+}
+
+.trip-chat-panel {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 700px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.trip-chat-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafafa;
+}
+
+.trip-chat-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.trip-chat-close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.trip-chat-close-btn:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.trip-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px;
+  background: #f9f9f9;
+}
+
+.trip-chat-empty {
+  text-align: center;
+  color: #999;
+  padding: 40px 20px;
+  font-style: italic;
+}
+
+.trip-chat-message {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.trip-chat-message-own {
+  background: #e3f2fd;
+  border-color: #bbdefb;
+}
+
+.trip-chat-message-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.trip-chat-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.trip-chat-message-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.trip-chat-author {
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+.trip-chat-time {
+  font-size: 11px;
+  color: #999;
+  margin-top: 2px;
+}
+
+.trip-chat-delete-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  color: #999;
+  padding: 4px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+  opacity: 0;
+}
+
+.trip-chat-message:hover .trip-chat-delete-btn {
+  opacity: 1;
+}
+
+.trip-chat-delete-btn:hover {
+  background: #fee;
+  color: #c33;
+}
+
+.trip-chat-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.trip-chat-mention {
+  background: #fff3cd;
+  color: #856404;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.trip-chat-form {
+  padding: 16px 20px;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+
+.trip-chat-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 50px;
+  margin-bottom: 10px;
+}
+
+.trip-chat-input:focus {
+  outline: none;
+  border-color: #2A9D8F;
+  box-shadow: 0 0 0 2px rgba(42, 157, 143, 0.1);
+}
+
+.trip-chat-form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.trip-chat-submit-btn {
+  background: #2A9D8F;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.trip-chat-submit-btn:hover:not(:disabled) {
+  background: #1f7f74;
+}
+
+.trip-chat-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+

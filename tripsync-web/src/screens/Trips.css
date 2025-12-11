@@ -1,0 +1,53 @@
+.trips-page {
+  padding: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.trip-form {
+  margin-bottom: 32px;
+}
+
+.trip-form input {
+  margin-bottom: 12px;
+}
+
+.trip-form label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.date-calendars-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .date-calendars-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.trip-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.trip-list li {
+  padding: 12px;
+  margin-bottom: 10px;
+  background: #f8f8f8;
+  border-radius: 6px;
+  transition: background 0.2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.trip-list li:hover {
+  background: #e9f3ff;
+}

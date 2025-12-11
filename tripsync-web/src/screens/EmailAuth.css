@@ -1,0 +1,47 @@
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  text-align: center; /* center text + inline elements */
+}
+
+.auth-card h2 {
+  margin-bottom: 24px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+}
+
+.auth-card form {
+  display: grid;
+  gap: 14px;
+  text-align: left; /* keep inputs/labels aligned inside the form */
+}
+
+.auth-card input {
+  text-align: left;
+}
+
+.auth-card button {
+  width: 100%;
+}
+
+.auth-alt {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+  color: #555;
+}
+
+.auth-error {
+  color: red;
+  font-size: 14px;
+  margin-top: 8px;
+  text-align: center;
+}

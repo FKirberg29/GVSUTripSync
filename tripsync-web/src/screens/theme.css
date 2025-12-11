@@ -1,0 +1,262 @@
+/* === Global Theme Variables === */
+:root {
+  --primary-color: #0077ff;
+  --primary-color-dark: #005fcc;
+  --background-color: #f4f6f9;
+  --text-color: #222;
+  --card-bg: #fff;
+  --card-radius: 10px;
+  --card-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Reset & base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+/* === Shared Card === */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 24px;
+}
+
+/* === Form Controls === */
+input,
+button {
+  font-family: inherit;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+button {
+  padding: 10px 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button.primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+button.primary:hover {
+  background: var(--primary-color-dark);
+}
+
+button.link {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+button.link:hover,
+a:hover {
+  text-decoration: underline;
+}
+
+/* === Links === */
+a {
+  color: var(--primary-color);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* === Header/Navbar === */
+header.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0 24px;
+  border-bottom: 3px solid var(--primary-color-dark);
+  z-index: 1000;
+}
+
+/* Sub-containers for layout */
+header.app-header .left {
+  flex: 1;
+}
+
+header.app-header .center {
+  flex: 1;
+  text-align: center;
+}
+
+header.app-header .right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Title in header */
+header.app-header .app-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Links in header */
+header.app-header a {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+header.app-header a.active {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+header.app-header a:hover {
+  opacity: 0.85;
+}
+
+/* Buttons in header */
+header.app-header button {
+  background: #fff;
+  color: var(--primary-color);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+header.app-header button:hover {
+  background: var(--primary-color-dark);
+  color: #fff;
+}
+
+
+
+
+
+
+
+/* Logo link styling */
+header.app-header .logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #fff;
+  transition: opacity 0.2s;
+}
+
+header.app-header .logo-link:hover {
+  opacity: 0.85;
+}
+
+header.app-header .app-logo {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+/* === App body (offset for header) === */
+.app-body {
+  margin-top: 60px; /* header height */
+  padding: 24px;    /* default page padding */
+}
+
+/* === Danger / destructive button === */
+button.danger {
+  background: #ff4d4f;
+  color: #fff;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button.danger:hover {
+  background: #d9363e;
+}
+
+/* === Theme Overrides === */
+/* Light theme is default (defined in :root above) */
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --primary-color: #4a9eff;
+  --primary-color-dark: #2a7fcc;
+  --background-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --card-bg: #2d2d2d;
+  --card-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Ocean Theme */
+[data-theme="ocean"] {
+  --primary-color: #2A9D8F;
+  --primary-color-dark: #1f7f74;
+  --background-color: #e8f4f3;
+  --text-color: #1a3a36;
+  --card-bg: #ffffff;
+  --card-shadow: 0 4px 12px rgba(42, 157, 143, 0.15);
+}
+
+/* Sunset Theme */
+[data-theme="sunset"] {
+  --primary-color: #e76f51;
+  --primary-color-dark: #c95e43;
+  --background-color: #fff5f2;
+  --text-color: #2d1f1c;
+  --card-bg: #ffffff;
+  --card-shadow: 0 4px 12px rgba(231, 111, 81, 0.15);
+}
+
+/* Forest Theme */
+[data-theme="forest"] {
+  --primary-color: #2d5016;
+  --primary-color-dark: #1f350f;
+  --background-color: #f0f5ed;
+  --text-color: #1a2e0f;
+  --card-bg: #ffffff;
+  --card-shadow: 0 4px 12px rgba(45, 80, 22, 0.15);
+}
+

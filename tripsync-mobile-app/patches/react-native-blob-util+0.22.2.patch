@@ -1,0 +1,19 @@
+diff --git a/node_modules/react-native-blob-util/android/build.gradle b/node_modules/react-native-blob-util/android/build.gradle
+index 7b332f0..af29d03 100644
+--- a/node_modules/react-native-blob-util/android/build.gradle
++++ b/node_modules/react-native-blob-util/android/build.gradle
+@@ -108,12 +108,12 @@ afterEvaluate { project ->
+     }
+ 
+     task androidJavadocJar(type: Jar, dependsOn: androidJavadoc) {
+-        classifier = 'javadoc'
++        archiveClassifier.set('javadoc')
+         from androidJavadoc.destinationDir
+     }
+ 
+     task androidSourcesJar(type: Jar) {
+-        classifier = 'sources'
++        archiveClassifier.set('sources')
+         from android.sourceSets.main.java.sourceFiles
+     }
+ 
